@@ -49,7 +49,10 @@ class _PictureCardState extends State<PictureCard> {
               color: Colors.grey,
               margin: const EdgeInsets.only(bottom: 5),
               height: MediaQuery.of(context).size.height / 3,
-              child: const CircularProgressIndicator());
+              child: Container(
+                alignment: const Alignment(0, 0),
+                child: const CircularProgressIndicator(),
+              ));
         }
         if (state is DataLoadingError) {
           return Container(
