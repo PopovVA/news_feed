@@ -36,7 +36,7 @@ class _PictureCardState extends State<PictureCard> {
         if (state is DataLoaded) {
           return Container(
               decoration: BoxDecoration(
-                  color: Colors.brown,
+                  color: Colors.grey,
                   image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(state.picture.url))),
@@ -46,14 +46,14 @@ class _PictureCardState extends State<PictureCard> {
         }
         if (state is DataLoading) {
           return Container(
-              color: Colors.brown,
+              color: Colors.grey,
               margin: const EdgeInsets.only(bottom: 5),
               height: MediaQuery.of(context).size.height / 3,
               child: const CircularProgressIndicator());
         }
         if (state is DataLoadingError) {
           return Container(
-              color: Colors.brown,
+              color: Colors.grey,
               margin: const EdgeInsets.only(bottom: 5),
               height: MediaQuery.of(context).size.height / 3,
               child: ReloadingButton(pictureBloc: _pictureBloc));
