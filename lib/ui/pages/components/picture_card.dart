@@ -39,7 +39,7 @@ class _PictureCardState extends State<PictureCard> {
                   color: Colors.brown,
                   image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(state.picture.path))),
+                      image: NetworkImage(state.picture.url))),
               margin: const EdgeInsets.only(bottom: 5),
               height: MediaQuery.of(context).size.height / 3,
               child: Like());

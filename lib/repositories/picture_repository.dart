@@ -6,18 +6,19 @@ import '../models/picture.dart' show Picture;
 
 class PictureRepository {
   Future<Picture> fetchImage() async {
-    final String response = await fetchImageUrl();
-    return Picture(path: response);
+    final Map<String, dynamic> response = await fetchImageUrl();
+    return Picture.fromJson(response);
   }
 
-  Future<String> fetchImageUrl() async {
+  Future<Map<String, dynamic>> fetchImageUrl() async {
     try {
       final http.Client client = http.Client();
-      final String downloadUrl =
-          'https://picsum.photos/25?image=${Random().nextInt(10)}';
-      final http.Response response = await client.get(downloadUrl);
+      final http.Response response = await client.get(
+          'http://www.splashbase.co/api/v1/images/${Random().nextInt(10)}');
       if (response.statusCode == 200) {
-        return downloadUrl;
+        final Map<String, dynamic> jsonResponse = await json.decode(
+            response.body);
+        return jsonResponse;
       } else {
         throw Exception('Failed to load picture');
       }

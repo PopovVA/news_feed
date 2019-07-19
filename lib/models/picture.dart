@@ -1,5 +1,9 @@
 class Picture {
-  Picture({this.path});
+  Picture.fromJson(Map<String, dynamic> json) {
+    _url = json['url'];
+  }
 
-  String path;
+  String _url;
+
+  String get url => _url;
 }
