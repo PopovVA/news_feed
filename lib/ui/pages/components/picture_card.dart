@@ -5,13 +5,9 @@ import '../../../blocs/picture/picture_bloc.dart' show PictureBloc;
 import '../../../blocs/picture/picture_event.dart'
     show FullScreenButtonPressed, PictureEvent, LikeButtonPressed;
 import '../../../blocs/picture/picture_state.dart'
-    show
-    PictureIsNotLiked,
-    PictureIsLiked,
-    PictureIsNotFullscreen,
-    PictureIsFullscreen,
-    PictureState;
+    show PictureIsNotLiked, PictureIsLiked, PictureState;
 import '../../../models/picture.dart' show Picture;
+import 'full_screen.dart' show FullScreenPage;
 import 'full_screen_button.dart' show FullScreenButton;
 import 'like.dart' show Like;
 
@@ -28,8 +24,6 @@ class PictureCard extends StatefulWidget {
 }
 
 class _PictureCardState extends State<PictureCard> {
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,18 +36,21 @@ class _PictureCardState extends State<PictureCard> {
             .of(context)
             .size
             .height / 3,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            FullScreenButton(),
-            BlocBuilder<PictureEvent, PictureState>(
-              bloc: widget.pictureBloc,
-              builder: (BuildContext context, PictureState state) {
-                return Like(
-                    pictureBloc: widget.pictureBloc, pictureState: state);
-              },
-            )
-          ],
+        child: BlocBuilder<PictureEvent, PictureState>(
+          bloc: widget.pictureBloc,
+          builder: (BuildContext context, PictureState state) {
+            return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  FullScreenButton(
+                    isFullScreen: false,
+                    pictureBloc: widget.pictureBloc,
+                    pictureState: state,
+                    picture: widget.picture,
+                  ),
+                  Like(pictureBloc: widget.pictureBloc, pictureState: state)
+                ]);
+          },
         ));
   }
 }
