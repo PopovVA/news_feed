@@ -15,12 +15,12 @@ class LikeButtonPressed extends PictureEvent {
   String toString() => 'LikeButtonPressed';
 }
 
-class FullScreenButtonPressed extends PictureEvent {
-  FullScreenButtonPressed({@required this.isFullScreen})
-      : super(<dynamic>[isFullScreen]);
-
-  final bool isFullScreen;
-
-  @override
-  String toString() => 'FullScreenButtonPressed';
-}
+//class FullScreenButtonPressed extends PictureEvent {
+//  FullScreenButtonPressed({@required this.isFullScreen})
+//      : super(<dynamic>[isFullScreen]);
+//
+//  final bool isFullScreen;
+//
+//  @override
+//  String toString() => 'FullScreenButtonPressed';
+//}

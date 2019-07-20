@@ -11,7 +11,7 @@ import 'picture_state.dart'
 
 class PictureBloc extends Bloc<PictureEvent, PictureState> {
   @override
-  PictureState get initialState => PictureIsNotFullscreen();
+  PictureState get initialState => PictureIsNotLiked();
 
   @override
   Stream<PictureState> mapEventToState(PictureEvent event) async* {
@@ -21,11 +21,11 @@ class PictureBloc extends Bloc<PictureEvent, PictureState> {
       else
         yield PictureIsNotLiked();
     }
-    if (event is FullScreenButtonPressed) {
-      if (event.isFullScreen)
-        yield PictureIsFullscreen();
-      else
-        yield PictureIsNotFullscreen();
-    }
+//    if (event is FullScreenButtonPressed) {
+//      if (event.isFullScreen)
+//        yield PictureIsFullscreen();
+//      else
+//        yield PictureIsNotFullscreen();
+//    }
   }
 }

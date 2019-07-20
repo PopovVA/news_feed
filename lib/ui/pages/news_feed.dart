@@ -6,6 +6,7 @@ import '../../blocs/application/app_event.dart'
     show AppStarted, AppScrolling, AppEvent;
 import '../../blocs/application/app_state.dart'
     show AppState, DataLoaded, DataLoading, DataLoadingError;
+import '../../blocs/picture/picture_bloc.dart' show PictureBloc;
 import '../../models/picture.dart' show Picture;
 import '../pages/components/loading_card.dart' show LoadingCard;
 import '../pages/components/picture_card.dart' show PictureCard;
@@ -139,7 +140,8 @@ class _NewsFeedState extends State<NewsFeed> {
 
   List<Widget> _buildComponents(DataLoaded state) {
     for (Picture picture in state.pictures) {
-      widget.pictureCards.add(PictureCard(picture: picture));
+      widget.pictureCards.add(
+          PictureCard(picture: picture, pictureBloc: PictureBloc()));
     }
     return widget.pictureCards;
   }
