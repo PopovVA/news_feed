@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart' show immutable;
-import '../../models/picture.dart' show Picture;
 
 @immutable
 abstract class PictureState extends Equatable {
@@ -10,25 +9,22 @@ abstract class PictureState extends Equatable {
   String toString();
 }
 
-class DataLoading extends PictureState {
+class PictureIsLiked extends PictureState {
   @override
-  String toString() => 'DataLoading';
+  String toString() => 'PictureLiked';
 }
 
-class DataLoaded extends PictureState {
-  DataLoaded(this.picture);
-
-  final Picture picture;
-
+class PictureIsNotLiked extends PictureState {
   @override
-  String toString() => 'DataLoaded';
+  String toString() => 'PictureIsNotLiked';
 }
 
-class DataLoadingError extends PictureState {
-  DataLoadingError(this.error);
-
-  final String error;
-
+class PictureIsFullscreen extends PictureState {
   @override
-  String toString() => error;
+  String toString() => 'PictureIsFullscreen';
+}
+
+class PictureIsNotFullscreen extends PictureState {
+  @override
+  String toString() => 'PictureIsNotFullscreen';
 }

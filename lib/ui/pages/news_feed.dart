@@ -9,7 +9,6 @@ import '../../blocs/application/app_state.dart'
 import '../../models/picture.dart' show Picture;
 import '../pages/components/loading_card.dart' show LoadingCard;
 import '../pages/components/picture_card.dart' show PictureCard;
-import '../pages/components/snack_bar.dart' show CustomSnackBar;
 
 class NewsFeed extends StatefulWidget {
   NewsFeed({Key key, @required this.title, @required this.appBloc})

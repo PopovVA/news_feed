@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Like extends StatefulWidget {
+class FullScreenButton extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _LikeState();
+    return _FullScreenButtonState();
   }
 }
 
-class _LikeState extends State<Like> {
-  bool isLiked = false;
+class _FullScreenButtonState extends State<FullScreenButton> {
+  bool isFullScreen = false;
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,10 @@ class _LikeState extends State<Like> {
       margin: const EdgeInsets.symmetric(horizontal: 15),
       child: IconButton(
         color: Colors.white,
-        icon: isLiked ? Icon(Icons.star) : Icon(Icons.star_border),
+        icon: isFullScreen ? Icon(Icons.undo) : Icon(Icons.aspect_ratio),
         onPressed: () {
           setState(() {
-            isLiked = !isLiked;
+            isFullScreen = !isFullScreen;
           });
         },
       ),

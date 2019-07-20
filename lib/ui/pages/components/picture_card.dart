@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../models/picture.dart' show Picture;
+import 'full_screen_button.dart' show FullScreenButton;
 import 'like.dart' show Like;
+
 
 
 class PictureCard extends StatefulWidget {
@@ -27,6 +29,12 @@ class _PictureCardState extends State<PictureCard> {
             .of(context)
             .size
             .height / 3,
-        child: Like());
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            FullScreenButton(),
+            Like()
+          ],
+        ));
   }
 }
