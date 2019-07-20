@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart'
-    show BlocBuilder, BlocListener, BlocListenerTree;
+    show BlocBuilder, BlocListener;
 import '../../blocs/application/app_bloc.dart' show AppBloc;
 import '../../blocs/application/app_event.dart'
     show AppStarted, AppScrolling, AppEvent;

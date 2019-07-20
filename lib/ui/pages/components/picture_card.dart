@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart'
-    show BlocBuilder, BlocListener, BlocListenerTree;
+    show BlocBuilder;
 import '../../../blocs/picture/picture_bloc.dart' show PictureBloc;
 import '../../../blocs/picture/picture_event.dart'
-    show FullScreenButtonPressed, PictureEvent, LikeButtonPressed;
+    show PictureEvent;
 import '../../../blocs/picture/picture_state.dart'
-    show PictureIsNotLiked, PictureIsLiked, PictureState;
+    show PictureState;
 import '../../../models/picture.dart' show Picture;
-import 'full_screen.dart' show FullScreenPage;
 import 'full_screen_button.dart' show FullScreenButton;
 import 'like.dart' show Like;
 

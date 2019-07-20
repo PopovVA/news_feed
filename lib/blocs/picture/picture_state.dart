@@ -18,13 +18,3 @@ class PictureIsNotLiked extends PictureState {
   @override
   String toString() => 'PictureIsNotLiked';
 }
-
-//class PictureIsFullscreen extends PictureState {
-//  @override
-//  String toString() => 'PictureIsFullscreen';
-//}
-//
-//class PictureIsNotFullscreen extends PictureState {
-//  @override
-//  String toString() => 'PictureIsNotFullscreen';
-//}

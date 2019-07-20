@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../blocs/picture/picture_bloc.dart' show PictureBloc;
 import '../../../blocs/picture/picture_event.dart' show LikeButtonPressed;
 import '../../../blocs/picture/picture_state.dart'
-    show PictureIsLiked, PictureState;
+    show PictureState;
 import '../../../models/picture.dart' show Picture;
 import 'full_screen.dart' show FullScreenPage;
 

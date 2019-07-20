@@ -1,13 +1,11 @@
 import 'package:bloc/bloc.dart' show Bloc;
 import 'picture_event.dart'
-    show FullScreenButtonPressed, LikeButtonPressed, PictureEvent;
+    show LikeButtonPressed, PictureEvent;
 import 'picture_state.dart'
     show
     PictureState,
-    PictureIsFullscreen,
     PictureIsLiked,
-    PictureIsNotLiked,
-    PictureIsNotFullscreen;
+    PictureIsNotLiked;
 
 class PictureBloc extends Bloc<PictureEvent, PictureState> {
   @override
@@ -21,11 +19,5 @@ class PictureBloc extends Bloc<PictureEvent, PictureState> {
       else
         yield PictureIsNotLiked();
     }
-//    if (event is FullScreenButtonPressed) {
-//      if (event.isFullScreen)
-//        yield PictureIsFullscreen();
-//      else
-//        yield PictureIsNotFullscreen();
-//    }
   }
 }

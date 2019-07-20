@@ -5,7 +5,7 @@ import '../../../blocs/picture/picture_bloc.dart' show PictureBloc;
 import '../../../blocs/picture/picture_event.dart'
     show FullScreenButtonPressed, PictureEvent, LikeButtonPressed;
 import '../../../blocs/picture/picture_state.dart'
-    show PictureIsNotLiked, PictureIsLiked, PictureState;
+    show PictureState;
 import '../../../models/picture.dart' show Picture;
 import 'full_screen_button.dart' show FullScreenButton;
 import 'like.dart' show Like;
