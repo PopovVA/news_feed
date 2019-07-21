@@ -10,9 +10,69 @@ Flutter news feed application
 
 ## Screenshots And Usage
 
+The project has two blocks for state management. 
+1. *Application bloc* consists of two events **AppStarted** and **AppScrolling**. When the application starts, **AppStarted** is called and the number of images defined in the **StartingNumberOfCards** variable is loaded (lib / constants / application). When scrolling the tape, AppScrolling is called and the number of images defined in the variable **ScrollingNumberOfCards** is loaded (lib / constants / application).
+
+```
+  class AppBloc extends Bloc<AppEvent, AppState> {
+  AppBloc({@required this.pictureRepository});
+
+  final PictureRepository pictureRepository;
+
+  @override
+  AppState get initialState => DataLoading();
+
+  @override
+  Stream<AppState> mapEventToState(AppEvent event) async* {
+    if (event is AppStarted) {
+      try {
+        yield DataLoading();
+        final List<Picture> pictures =
+            await pictureRepository.fetchImages(StartingNumberOfCards);
+        yield DataLoaded(pictures);
+      } catch (error) {
+        yield DataLoadingError(error.toString());
+      }
+    }
+    if (event is AppScrolling) {
+      try {
+        yield DataLoading();
+        final List<Picture> pictures =
+            await pictureRepository.fetchImages(ScrollingNumberOfCards);
+        yield DataLoaded(pictures);
+      } catch (error) {
+        yield DataLoadingError(error.toString());
+      }
+    }
+  }
+}
+```
+
+2. *Picture bloc* consists of one event **LikeButtonPressed**. When you click on the star icon, this event is triggered and, depending on the current state of the image, it changes to the **PictureLiked** or **PictureIsNotLiked** state.
+
+```dart
+class PictureBloc extends Bloc<PictureEvent, PictureState> {
+  @override
+  PictureState get initialState => PictureIsNotLiked();
+
+  @override
+  Stream<PictureState> mapEventToState(PictureEvent event) async* {
+    if (event is LikeButtonPressed) {
+      if (event.like)
+        yield PictureIsLiked();
+      else
+        yield PictureIsNotLiked();
+    }
+  }
+}
+```
+
+
 ### Loading news
 
 ![](screenshots/loading.gif)
+
+
 
 ### Scroll loading
 
@@ -22,7 +82,7 @@ Flutter news feed application
 
 ![](screenshots/fullScreen.gif)
 
-## Getting Started
+## Flutter default Getting Started guide
 
 This project is a starting point for a Flutter application.
 
