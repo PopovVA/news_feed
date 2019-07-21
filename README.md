@@ -16,7 +16,7 @@ Flutter news feed application
 
 ### Scroll loading
 
-![](screenshots/loading.gif)
+![](screenshots/scroll.gif)
 
 ### Full screen
 
