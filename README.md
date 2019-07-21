@@ -1,6 +1,26 @@
-# news_feed
+# Flutter news feed application
 
 Flutter news feed application
+
+## Dependencies
+
+* flutter_bloc: ^0.19.1 [![Foo](https://img.shields.io/pub/v/flutter_bloc.svg)](https://pub.dev/packages/flutter_bloc)
+* http: ^0.12.0+2 [![Foo](https://img.shields.io/pub/v/http.svg)](https://pub.dev/packages/http)
+* equatable: ^0.3.0 [![Foo](https://img.shields.io/pub/v/equatable.svg)](https://pub.dev/packages/equatable)
+
+## Screenshots And Usage
+
+### Loading news
+
+![](loading.gif)
+
+### Scroll loading
+
+![](screenshots/loading.gif)
+
+### Full screen
+
+![](screenshots/fullScreen.gif)
 
 ## Getting Started
 
@@ -14,3 +34,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Bonus
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
