@@ -12,7 +12,7 @@ Flutter news feed application
 
 ### Loading news
 
-![](loading.gif)
+![](screenshots/loading.gif)
 
 ### Scroll loading
 
