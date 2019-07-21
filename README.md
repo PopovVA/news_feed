@@ -13,7 +13,7 @@ Flutter news feed application
 The project has two blocks for state management. 
 1. *Application bloc* consists of two events **AppStarted** and **AppScrolling**. When the application starts, **AppStarted** is called and the number of images defined in the **StartingNumberOfCards** variable is loaded (lib / constants / application). When scrolling the tape, AppScrolling is called and the number of images defined in the variable **ScrollingNumberOfCards** is loaded (lib / constants / application).
 
-```
+```dart
   class AppBloc extends Bloc<AppEvent, AppState> {
   AppBloc({@required this.pictureRepository});
 
