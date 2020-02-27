@@ -4,9 +4,9 @@ Flutter news feed application
 
 ## Dependencies
 
-* flutter_bloc: ^0.19.1 [![Foo](https://img.shields.io/pub/v/flutter_bloc.svg)](https://pub.dev/packages/flutter_bloc)
-* http: ^0.12.0+2 [![Foo](https://img.shields.io/pub/v/http.svg)](https://pub.dev/packages/http)
-* equatable: ^0.3.0 [![Foo](https://img.shields.io/pub/v/equatable.svg)](https://pub.dev/packages/equatable)
+* flutter_bloc: ^0.19.1
+* http: ^0.12.0+2 
+* equatable: ^0.3.0
 
 ## Screenshots And Usage
 
